@@ -1,0 +1,33 @@
+---
+title: "Info 201: Assignment 3"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(ggplot2)
+library(dplyr)
+source("../source/analysis.R")
+```
+
+## R Introduction
+The racial injustice has been a long known social problems in the United States. By studying the data of incarceration trends. I want to acquire more insights on this social issue. This dataset is constructed by Vera Institute of Justice, and the project is founded by the Robert W. Wilson Charitable Trust. It contains the jail and prison across the United States since 1970. By studying the data, I found that in the most recent year, the state with highest incarnation ratio is Louisiana, with a ratio of 0.625%. **`r max(state_high_incareration_ratio$ratio)`** Also in the most recent year, the white population is 60.3%, **`r white_pop_ratio$ratio`** corresponding white jail population ratio is 46.9%. **`r white_jail_pop_ratio$ratio`** On the other hand, there is only about 13.5% black population in the US. **`r `black_pop_ratio$ratio`**However, the black jail population is 33.6%. **`r black_jail_pop_ratio$ratio`** Which is almost 250% of the total black population ratio.   
+
+## Trends Over Time Chart
+```{r, echo=TRUE}
+trend_over_time
+```
+this chart includes the white jail ratio by regions over the year. This chart intends to find out the trend of the rate of white jail population over time. The chart shows that the South Region has always been having the highest white jail population, where the Northeast has always been the lowest. There isn't significant changes in the rate over the past three decades. 
+
+## Variable Comparison Chart
+```{r, echo=TRUE}
+variable_comparison
+```
+This chart is created to discover the relationship between the overall black jail ratio and the overall white jail ratio. The chart displays that the white jail ratio has been increasing slowly and steadily in the past three decades. However, there is a significant drop in the overall black jail rate in the past decade. 
+
+## Map
+```{r, echo=TRUE}
+map
+```
+The map displays the the ratio of black jail population vs. white jail population. It's interesting to see that the region with lowest and highest white jail rate as we discovered from the first chart (South and northeast) tends to have a higher black vs. white jail ratio. It means the black jail population in these regions seems to be much higher than the white jail population. 
